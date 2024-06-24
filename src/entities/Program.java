@@ -1,5 +1,8 @@
 package entities;
 
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Program {
 
 	public static void main(String[] args) {
@@ -22,12 +25,25 @@ Dinheiro recebido: 100.00
 TROCO = 10.00
 		 */
 		// Variáveis
-		Double preco;
+		Double precoUnit;
 		int qtdProduto;
-		Double dinheiroPago;
+		Double dinheiroRecebido;
 		Double troco;
 		
-
+		Locale.setDefault(Locale.US);
+		Scanner Leia = new Scanner(System.in);
+		
+		System.out.print("Preço unitário do produto: ");
+		precoUnit = Leia.nextDouble();
+		System.out.print("Quantidade comprada: ");
+		qtdProduto = Leia.nextInt();
+		System.out.print("Dinheiro recebido: ");
+		dinheiroRecebido = Leia.nextDouble();
+		troco = dinheiroRecebido - (precoUnit * qtdProduto);
+		System.out.printf("Troco = %.2f\n", troco);
+		
+		
+		Leia.close();
 	}
 
 }
